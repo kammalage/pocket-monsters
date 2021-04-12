@@ -1,4 +1,4 @@
-import Counter from './components/Counter';
+import ShowPokedex from './components/ShowPokedex';
 import './App.css';
 
 function App() {
@@ -6,7 +6,8 @@ function App() {
         <div className='App'>
             <header className='App-header'>
                 <h1>Pocket Monsters</h1>
-                <Counter />
+                <h3>Create your pokemon Party</h3>
+                <ShowPokedex />
             </header>
         </div>
     );
