@@ -1,4 +1,5 @@
-import { Fragment, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import {List, ListItem, ListItemText, makeStyles} from '@material-ui/core';
 
 function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
@@ -16,19 +17,33 @@ function ShowPokedex() {
         });
     }
 
-    function renderPokedex() {
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            width: '100%',
+            maxWidth: '360px',
+            backgroundColor: theme.palette.background.paper,
+        },
+    }));
+
+
+    function RenderPokedex() {
+        const classes = useStyles();
+
         return (
-            <>
-                <ul>
-                    {pokedex.map((pokemon) => {
-                        return <li>{pokemon.name}</li>;
+            <div className={classes.root}>
+                <List>
+                    {pokedex.map((pokemon, index) => {
+                        return (
+                            <ListItem divider button>
+                                <ListItemText primary={(index + 1) + ' ' + pokemon.name} />
+                            </ListItem>);
                     })}
-                </ul>
-            </>
+                </List>
+            </div>
         );
     }
 
-    return renderPokedex();
+    return RenderPokedex();
 }
 
 export default ShowPokedex;

@@ -10,7 +10,6 @@ function App() {
                 <HeaderBar />
             </header>
             <body>
-                <h3>Create your pokemon Party</h3>
                 <ShowPokedex />
             </body>
         </>
