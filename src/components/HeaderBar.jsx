@@ -1,4 +1,4 @@
-import ShowPokedex from './components/ShowPokedex';
+import {React} from 'react';
 import {
     AppBar,
     Toolbar,
@@ -8,9 +8,8 @@ import {
     makeStyles,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import './App.css';
 
-function App() {
+function HeaderBar() {
     const useStyles = makeStyles((theme) => ({
         root: {
             flexGrow: 1,
@@ -25,10 +24,9 @@ function App() {
 
     const classes = useStyles();
 
-    return (
-        <div className='App'>
-            <header className='App-header'>
-                <AppBar position='static'>
+    return(
+        <div>
+             <AppBar position='static'>
                     <Toolbar>
                         <IconButton
                             edge='start'
@@ -43,13 +41,8 @@ function App() {
                         <Button color='inherit'>Login</Button>
                     </Toolbar>
                 </AppBar>
-            </header>
-            <body>
-                <h3>Create your pokemon Party</h3>
-                <ShowPokedex />
-            </body>
         </div>
-    );
+    )
 }
 
-export default App;
+export default HeaderBar;
