@@ -1,4 +1,4 @@
-import {React} from 'react';
+import {React, Fragment} from 'react';
 import {
     AppBar,
     Toolbar,
@@ -25,7 +25,7 @@ function HeaderBar() {
     const classes = useStyles();
 
     return(
-        <div>
+        <>
              <AppBar position='static'>
                     <Toolbar>
                         <IconButton
@@ -41,7 +41,7 @@ function HeaderBar() {
                         <Button color='inherit'>Login</Button>
                     </Toolbar>
                 </AppBar>
-        </div>
+        </>
     )
 }
 

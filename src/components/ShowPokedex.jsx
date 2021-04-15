@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
@@ -18,13 +18,13 @@ function ShowPokedex() {
 
     function renderPokedex() {
         return (
-            <div>
+            <>
                 <ul>
                     {pokedex.map((pokemon) => {
                         return <li>{pokemon.name}</li>;
                     })}
                 </ul>
-            </div>
+            </>
         );
     }
 
