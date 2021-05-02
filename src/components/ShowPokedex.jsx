@@ -5,16 +5,16 @@ function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
 
     useEffect(() => {
-        getPokedex();
+        getPokedexTest();
     }, []);
 
-    async function getPokedex() {
-        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
-        const retrievedPokemon = await res.json();
+    async function getPokedexTest() {
+        const res = await fetch('http://localhost:8080/pokedex');
+        const retreivedPokemon = await res.json();
 
         setPokedex(() => {
-            return retrievedPokemon.results;
-        });
+            return retreivedPokemon;
+        })
     }
 
     const useStyles = makeStyles((theme) => ({
@@ -34,8 +34,8 @@ function ShowPokedex() {
                 <List>
                     {pokedex.map((pokemon, index) => {
                         return (
-                            <ListItem divider button>
-                                <ListItemText primary={(index + 1) + ' ' + pokemon.name} />
+                            <ListItem key={index} divider button>
+                                <ListItemText primary={(index + 1) + ' ' + pokemon.pokemon_species.name} />
                             </ListItem>);
                     })}
                 </List>

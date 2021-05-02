@@ -6,12 +6,8 @@ import './App.css';
 function App() {
     return (
         <>
-            <header className='App-header'>
-                <HeaderBar />
-            </header>
-            <body>
-                <ShowPokedex />
-            </body>
+            <HeaderBar />
+            <ShowPokedex />
         </>
     );
 }
