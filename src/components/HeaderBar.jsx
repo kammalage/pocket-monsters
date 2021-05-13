@@ -20,13 +20,17 @@ function HeaderBar() {
         title: {
             flexGrow: 1,
         },
+        appBar: {
+            position: 'relative',
+            zIndex: theme.zIndex.drawer + 1,
+        },
     }));
 
     const classes = useStyles();
 
     return(
         <>
-             <AppBar position='static'>
+             <AppBar position='static' className={classes.appBar}>
                     <Toolbar>
                         <IconButton
                             edge='start'
