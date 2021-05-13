@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {List, ListItem, ListItemText, makeStyles} from '@material-ui/core';
+import {Drawer, List, ListItem, ListItemText, makeStyles} from '@material-ui/core';
 
 function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
@@ -18,11 +18,10 @@ function ShowPokedex() {
     }
 
     const useStyles = makeStyles((theme) => ({
-        root: {
-            width: '100%',
-            maxWidth: '360px',
-            backgroundColor: theme.palette.background.paper,
+        List: {
+            width: '500px',
         },
+        toolbar: theme.mixins.toolbar,
     }));
 
 
@@ -30,16 +29,17 @@ function ShowPokedex() {
         const classes = useStyles();
 
         return (
-            <div className={classes.root}>
-                <List>
-                    {pokedex.map((pokemon, index) => {
-                        return (
-                            <ListItem key={index} divider button>
-                                <ListItemText primary={(index + 1) + ' ' + pokemon.pokemon_species.name} />
-                            </ListItem>);
-                    })}
-                </List>
-            </div>
+                <Drawer variant="permanent" anchor="left">
+                    <div className={classes.toolbar} />
+                    <List className={classes.List}>
+                        {pokedex.map((pokemon, index) => {
+                            return (
+                                <ListItem key={index} divider button>
+                                    <ListItemText primary={(index + 1) + ' ' + pokemon.pokemon_species.name} />
+                                </ListItem>);
+                        })}
+                    </List>
+                </Drawer>
         );
     }
 
