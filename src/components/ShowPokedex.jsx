@@ -3,7 +3,7 @@ import {Drawer, List, ListItem, ListItemText, makeStyles} from '@material-ui/cor
 
 function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
-
+    // test
     useEffect(() => {
         getPokedexTest();
     }, []);
