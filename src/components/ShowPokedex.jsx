@@ -25,7 +25,7 @@ function ShowPokedex() {
     }));
 
 
-    function RenderPokedex() {
+    const RenderPokedex = () =>  {
         const classes = useStyles();
 
         return (
