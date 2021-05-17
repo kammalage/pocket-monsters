@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import {Drawer, List, ListItem, ListItemText, makeStyles} from '@material-ui/core';
 
+/**
+ * ShowPokedex returns a MUI list of pokemon from the backend API call
+ * @component
+ * @returns {component} list of pokemon
+ */
 function ShowPokedex() {
     const [pokedex, setPokedex] = useState([]);
     // test
